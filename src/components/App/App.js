@@ -1,14 +1,15 @@
 import { useState, useMemo } from "react";
 import { ThemeProvider } from "styled-components";
-import Main from "../Main/Main";
-
 import GlobalStyle from '../../styles/global';
+
+import Main from "../Main/Main";
 
 import themes from "../../styles/themes";
 
 function App() {
 
-  const [ theme, setTheme ] = useState('light');
+  const [ theme, setTheme ] = useState('dark');
+  console.log(theme);
 
   const currentTheme = useMemo(() => {
     return themes[theme] || themes.light;
@@ -21,7 +22,7 @@ function App() {
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
-      <Main onToggleTheme={handleToggleTheme}/>
+      <Main theme={theme} onToggleTheme={handleToggleTheme}/>
     </ThemeProvider>
   );
 }

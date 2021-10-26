@@ -1,4 +1,5 @@
 import { TodoContainer } from './styles';
+import { Check, Clear } from '@material-ui/icons';
 
 function Todo({ title, onFinished, id, onRemove, finished}) {
   return (
@@ -7,9 +8,10 @@ function Todo({ title, onFinished, id, onRemove, finished}) {
         <h2>{title}</h2>
       </div>
 
-      <button className="finished" onClick={() => onFinished(id)}>CONCLUÍDO</button>
-      <button className="remove" onClick={() => onRemove(id)}>REMOVER</button>
-      
+      <div className="buttons">
+        <button className="finished" onClick={() => onFinished(id)}><Check fontSize="large"/></button>
+        <button className="remove" onClick={() => onRemove(id)}><Clear fontSize="large"/></button>
+      </div>
     </TodoContainer>
   );
 }

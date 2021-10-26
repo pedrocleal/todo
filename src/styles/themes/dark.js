@@ -1,5 +1,5 @@
 export default {
-  backgroundColor: '#2F3640',
+  backgroundColor: '#222',
   boxBackground: '#333',
   inputBackground: '#555',
   titleColor: '#fff',

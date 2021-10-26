@@ -20,7 +20,7 @@ const initialTodos = [
   },
 ]
 
-function Main({ onToggleTheme }) {
+function Main({ onToggleTheme, theme }) {
 
   const [ todos, setTodos ] = useState(initialTodos);
   const [ inputValue, setInputValue ] = useState('');
@@ -69,19 +69,19 @@ function Main({ onToggleTheme }) {
 
   return (
     <>
-      <Header onToggleTheme={onToggleTheme}/>
+      <Header onToggleTheme={onToggleTheme} theme={theme}/>
       <MainContainer>
         <InputContainer>
-          <div>
+          <div className="inputDiv">
             <label>New Todo</label>
             <input value={inputValue} onChange={handleInputChange} type="text" className="input" placeholder="Add new TODO" />
           </div>
 
           <div className="buttons">
-            <button className="addButton" onClick={handleNewTodo}>
+            <button type="button" className="addButton" onClick={handleNewTodo}>
               <img src={add} alt="Add Todo"></img>
             </button>
-            <button className="clearButton" onClick={handleClearTodos}>
+            <button type="button" className="clearButton" onClick={handleClearTodos}>
               <img src={clear} alt="Clear todo's"></img>
             </button>
           </div>
@@ -89,6 +89,7 @@ function Main({ onToggleTheme }) {
         <h1 className="mytodos">my todo's</h1>
         {todos.map((todo) => (
           <Todo 
+            key={todo.id}
             id={todo.id}
             title={todo.title}
             finished={todo.finished}

@@ -13,8 +13,20 @@ export const HeaderContainer = styled.header`
   
   background: ${props => props.theme.headerBackground};
 
+  @media (max-width: 720px) {
+    height: 9.9rem;
+  }
+
   .social a {
-    padding: 1rem;
+    padding: .5rem;
+
+    @media (max-width: 720px) {
+      padding: .2rem;
+
+      img {
+        height: 3rem;
+      }
+    }
   }
 
   .title {
@@ -26,9 +38,9 @@ export const HeaderContainer = styled.header`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    position: relative;
-    animation: move 3s infinite;
-    -webkit-animation: move 5s infinite; 
+    @media (max-width: 720px) {
+      font-size: 3.7rem;
+    }
   }
 
   .themeButton {
@@ -38,6 +50,47 @@ export const HeaderContainer = styled.header`
     border-radius: 20px;
     outline: none;
     cursor: pointer;
+    @media (max-width: 720px) {
+      width: 8rem;
+      height: 3rem;
+    }
+    
+    .circleLeft {
+      cursor: pointer;
+      background: #8c7ae6;
+      color: #8c7ae6;
+      height: 32px;
+      width: 32px;
+      border-radius: 20px;
+      margin-left: .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circleRight {
+      cursor: pointer;
+      background: #f2b807;
+      color: #f2b807;
+      height: 32px;
+      width: 32px;
+      border-radius: 20px;
+      margin-left: 6.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 720px) {
+        margin-left: 5rem;
+      }
+    }
+    
+    .circleLeft, 
+    .circleRight {
+      @media (max-width: 720px) {
+        height: 22px;
+        width: 22px;
+      }
+    }
   }
 
   @keyframes move {

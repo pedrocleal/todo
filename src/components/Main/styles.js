@@ -7,10 +7,17 @@ export const MainContainer = styled.main`
   justify-content: center;
   flex-direction: column;
 
-  width: 720px;
+  max-width: 720px;
+  width: 100%;
+
+  @media (max-width: 720px) {
+    width: 90%;
+  }
 
   .mytodos {
+    width: 100%;
     margin-top: 4.5rem;
+    text-align: center;
 
     font-size: 4.8rem;
     font-weight: 600;
@@ -19,51 +26,93 @@ export const MainContainer = styled.main`
     -webkit-font-smoothing: antialiased;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: 720px) {
+      font-size: 3.6rem;
+    }
   }
 `; 
 
 export const InputContainer = styled.div`
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem;
 
-  width: 100%;
-
   background: ${props => props.theme.boxBackground};
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  .inputDiv {
+    @media (max-width: 720px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } 
+  }
+
+  .buttons {
+    display: flex;
+    @media (max-width: 720px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } 
+  }
 
   label {
     font-size: 2.4rem;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
+    @media (max-width: 720px) {
+      width: 100%;
+      font-size: 1.8rem;
+    }
   }
 
   input {
     margin-left: 2rem;
     width: 39rem;
     height: 3.3rem;
+    color: ${props => props.theme.textColor};
     background: ${props => props.theme.inputBackground};
     border: none;
     border-radius: 5px;
     padding: 1rem;
     font-family: 'Montserrat', sans-serif;
     outline: none;
+
+    @media (max-width: 520px) {
+      width: 14rem;
+    }
+
+    @media (max-width: 720px) {
+      margin-right: .5rem;
+      width: 25rem;
+    }
   }
 
   .addButton,
   .clearButton {
     width: 39.5px;
     height: 32.92px;
-    border-radius: 50px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border: none;
     outline: none;
     cursor: pointer;
     color: white;
     margin: 0.5rem;
+    @media (max-width: 720px) {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+    }
   }
 
   .addButton {
