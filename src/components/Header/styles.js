@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
   border-radius: 0 0 20px 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   
-  background: #A4E4FF;
+  background: ${props => props.theme.headerBackground};
 
   .social a {
     padding: 1rem;
@@ -21,7 +21,7 @@ export const HeaderContainer = styled.header`
     font-size: 7.2rem;
     font-weight: 600;
     background-clip: text;
-    background: linear-gradient(89.9deg, rgba(237, 36, 255, 0.8) -9.58%, #001AFF 45.88%, rgba(255, 49, 36, 0.8) 107.01%);
+    background: ${props => props.theme.titleColor};
     -webkit-font-smoothing: antialiased;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

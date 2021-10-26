@@ -15,7 +15,7 @@ export const MainContainer = styled.main`
     font-size: 4.8rem;
     font-weight: 600;
     background-clip: text;
-    background: linear-gradient(89.9deg, rgba(237, 36, 255, 0.8) -9.58%, #001AFF 45.88%, rgba(255, 49, 36, 0.8) 107.01%);
+    background: ${props => props.theme.titleColor};
     -webkit-font-smoothing: antialiased;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -31,7 +31,7 @@ export const InputContainer = styled.div`
 
   width: 100%;
 
-  background: #fff;
+  background: ${props => props.theme.boxBackground};
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
@@ -45,7 +45,7 @@ export const InputContainer = styled.div`
     margin-left: 2rem;
     width: 39rem;
     height: 3.3rem;
-    background: #f1f1f1;
+    background: ${props => props.theme.inputBackground};
     border: none;
     border-radius: 5px;
     padding: 1rem;

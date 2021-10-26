@@ -9,7 +9,8 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Montserrat',sans-serif;
-    background: #F7F7F7;
+    background: ${props => props.theme.backgroundColor};
+    color: ${props => props.theme.textColor};
   }
 
   :root {

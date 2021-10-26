@@ -13,8 +13,8 @@ export const TodoContainer = styled.div`
   border: none;
   border-radius: 25px;
   opacity: ${props => props.finished ? 0.4 : 1};
-  background: ${props => props.finished ? '#05FF00' : '#FFF'}
-
+  background:  ${props => props.finished ? '#a9f9a8' : '#ffff'};
+  background: ${props => props.theme.boxBackground};
 
   h2 {
     width: 100%;

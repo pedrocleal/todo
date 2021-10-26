@@ -6,7 +6,7 @@ import github from '../../assets/github.svg';
 import instagram from '../../assets/instagram.svg';
 import linkedin from '../../assets/linkedin.svg';
 
-function Header() {
+function Header({ onToggleTheme }) {
   return (
     <HeaderContainer>
       <div className="social">
@@ -23,7 +23,7 @@ function Header() {
 
       <h1 className="title">TODO LIST</h1>
     
-      <button className="themeButton">
+      <button type="button" className="themeButton" onClick={onToggleTheme}>
         Mudar tema
       </button>
     </HeaderContainer>
