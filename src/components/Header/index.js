@@ -17,7 +17,7 @@ function Header({ onToggleTheme, theme }) {
         <a href="https://instagram.com/pedrocleall" target="_blank" rel="noreferrer">
           <img src={instagram} alt="instagram"/>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+        <a href="https://inkedin.com/in/pedro-leal-2335a0214/" target="_blank" rel="noreferrer">
           <img src={linkedin} alt="linkedin"/>
         </a>
       </div>
