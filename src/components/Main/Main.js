@@ -45,6 +45,7 @@ function Main({ onToggleTheme, theme }) {
     return true
   })
 
+  //effect to verify if is user firstVisit, if true, set initialTodos
   useEffect(() => {
     if (firstVisit) {
       localStorage.setItem('firstVisit', JSON.stringify(true));
