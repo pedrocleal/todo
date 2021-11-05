@@ -1,4 +1,6 @@
 import dark from "./dark";
 import light from "./light";
 
-export default { dark, light };
+const exports = { dark, light }; 
+
+export default exports;
