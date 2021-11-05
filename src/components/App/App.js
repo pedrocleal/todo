@@ -13,6 +13,7 @@ function App() {
   useEffect(() => {
     const storagedTheme = localStorage.getItem('theme');
     setTheme(storagedTheme);
+    //eslint-disable-next-line
   }, [])
 
   const currentTheme = useMemo(() => {
@@ -20,8 +21,8 @@ function App() {
   }, [theme]);
   
   function handleToggleTheme() {
-    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
-    setTheme(prevState => prevState === 'light' ? 'dark' : 'light');
+    localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark');
+    setTheme(prevState => prevState === 'dark' ? 'light' : 'dark');
   }
 
   return (

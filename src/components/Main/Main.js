@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../Header";
 import Todo from "../Todo";
+import toast, { Toaster } from 'react-hot-toast';
 
 import { MainContainer, InputContainer } from './styles';
 
@@ -52,6 +53,7 @@ function Main({ onToggleTheme, theme }) {
       setTodos(initialTodos);
     }
     setFirstVisit(false);
+    // eslint-disable-next-line
   }, []);
 
   //effect to update todos in localStorage
@@ -62,7 +64,7 @@ function Main({ onToggleTheme, theme }) {
 
   function handleNewTodo() {
     if (inputValue === '') {
-      return alert('NÃO É POSSÍVEL ADICIONAR TODO VAZIO :(');
+      return toast.error('Não é possível adicionar um todo vazio!', { position: 'bottom-right'});
     }
 
     setTodos((prevState) => [
@@ -134,6 +136,12 @@ function Main({ onToggleTheme, theme }) {
           />
         ))}
       </MainContainer>
+      <Toaster toastOptions={{
+        style: {
+          fontSize: '16px',
+          fontWeight: '600'
+        }
+      }}/>
     </>
   );
 }
