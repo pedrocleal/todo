@@ -8,22 +8,11 @@ import themes from "../../styles/themes";
 
 function App() {
 
-  const [ theme, setTheme ] = useState(() => {
-    const previousTheme = localStorage.getItem('theme');
+  const [ theme, setTheme ] = useState('dark');
 
-    if (previousTheme) {
-      return JSON.parse(previousTheme);
-    }
-
-    return 'dark'
-  });
-
-  localStorage.setItem('theme', theme);
-  
   const currentTheme = useMemo(() => {
     return themes[theme] || themes.light;
   }, [theme]);
-  
   
   function handleToggleTheme() {
     setTheme(prevState => prevState === 'light' ? 'dark' : 'light');
