@@ -36,7 +36,7 @@ export const MainContainer = styled.main`
 export const InputContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 1.2rem;
 
@@ -54,7 +54,10 @@ export const InputContainer = styled.div`
 
   .buttons {
     display: flex;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 720px) {
+      margin-right: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -66,8 +69,7 @@ export const InputContainer = styled.div`
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     @media (max-width: 720px) {
-      width: 100%;
-      font-size: 1.8rem;
+      padding-left: 2rem;
     }
   }
 
@@ -85,6 +87,7 @@ export const InputContainer = styled.div`
 
     @media (max-width: 520px) {
       width: 14rem;
+      margin: 0;
     }
 
     @media (max-width: 720px) {

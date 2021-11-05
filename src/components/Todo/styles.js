@@ -30,6 +30,10 @@ export const TodoContainer = styled.div`
 
   .finished,
   .remove {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 40px;
     height: 40px;
     color: white;

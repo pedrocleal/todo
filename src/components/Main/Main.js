@@ -89,7 +89,7 @@ function Main({ onToggleTheme, theme }) {
       if(todo.id === todoId) {
         return {
           ...todo,
-          finished: true
+          finished: !todo.finished
         }
       } 
       return todo
@@ -114,7 +114,6 @@ function Main({ onToggleTheme, theme }) {
             <label>New Todo</label>
             <input value={inputValue} onChange={handleInputChange} type="text" className="input" placeholder="Add new TODO" />
           </div>
-
           <div className="buttons">
             <button type="button" className="addButton" onClick={handleNewTodo}>
               <img src={add} alt="Add Todo"></img>

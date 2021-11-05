@@ -8,8 +8,6 @@ import linkedin from '../../assets/linkedin.svg';
 
 function Header({ onToggleTheme, theme }) {
   
-  console.log(theme);
-
   return (
     <HeaderContainer>
       <div className="social">
