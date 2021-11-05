@@ -9,7 +9,6 @@ import themes from "../../styles/themes";
 function App() {
 
   const [ theme, setTheme ] = useState('dark');
-  console.log(theme);
 
   const currentTheme = useMemo(() => {
     return themes[theme] || themes.light;

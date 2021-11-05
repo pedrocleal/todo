@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../Header";
 import Todo from "../Todo";
 
@@ -21,9 +21,43 @@ const initialTodos = [
 ]
 
 function Main({ onToggleTheme, theme }) {
-
-  const [ todos, setTodos ] = useState(initialTodos);
+  
   const [ inputValue, setInputValue ] = useState('');
+  
+  const [ todos, setTodos ] = useState(() => {
+    const storedTodos = localStorage.getItem('todos');
+    
+    if (storedTodos) {
+      return JSON.parse(storedTodos)
+    }
+    
+    return []
+  });
+
+  const [ firstVisit, setFirstVisit ] = useState(() => {
+    const isFirstVisit = localStorage.getItem('firstVisit');
+
+    if (isFirstVisit) {
+      localStorage.setItem('firstVisit', JSON.stringify(false));
+      return false;
+    }
+
+    return true
+  })
+
+  useEffect(() => {
+    if (firstVisit) {
+      localStorage.setItem('firstVisit', JSON.stringify(true));
+      setTodos(initialTodos);
+    }
+    setFirstVisit(false);
+  }, []);
+
+  //effect to update todos in localStorage
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+  
 
   function handleNewTodo() {
     if (inputValue === '') {
@@ -43,7 +77,8 @@ function Main({ onToggleTheme, theme }) {
   }
 
   function handleRemoveTodo(todoId) {
-    setTodos((prevState) => prevState.filter(todo => todo.id !== todoId))
+    setFirstVisit(false);
+    setTodos((prevState) => prevState.filter(todo => todo.id !== todoId));
   }
   
   function handleFinishedTodo(todoId) {
