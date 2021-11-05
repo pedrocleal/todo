@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from '../../styles/global';
 
@@ -10,11 +10,17 @@ function App() {
 
   const [ theme, setTheme ] = useState('dark');
 
+  useEffect(() => {
+    const storagedTheme = localStorage.getItem('theme');
+    setTheme(storagedTheme);
+  }, [])
+
   const currentTheme = useMemo(() => {
     return themes[theme] || themes.light;
   }, [theme]);
   
   function handleToggleTheme() {
+    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
     setTheme(prevState => prevState === 'light' ? 'dark' : 'light');
   }
 
